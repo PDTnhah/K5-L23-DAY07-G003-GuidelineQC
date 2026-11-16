@@ -27,13 +27,14 @@ Sai nguy hiểm nhất:
 | Lớp | Định nghĩa | Ví dụ | Phản ví dụ / dễ nhầm với |
 |---|---|---|---|
 | `person` | Người thật **không** ở trên xe: đi bộ, đứng, ngồi ghế/vỉa hè, gánh hàng, dắt xe. | Cô gái đi bộ và khách ngồi quán img_001; người gánh hàng và người đứng dắt xe đạp img_003 | Người đang ngồi trên xe máy, xe đạp, xích lô → `rider`. Tượng, ma-nơ-canh, búp bê, hình in (img_017, img_033, img_038) → không gán. |
-| `rider` | **Mới.** Người thật đang ngồi hoặc đứng **trên** `motorcycle`, `bicycle` hoặc `other_vehicle` không có khoang kín; gồm cả người lái và người ngồi sau. | Người đi xe máy giữa ảnh img_003; người đi xe máy nhòe img_014; người đạp xích lô img_023; tài xế tuk-tuk img_004 | Người dắt xe, đứng cạnh xe, chân không còn trên xe → `person` (img_003, người áo đỏ). Người ngồi trong `car`, `truck`, `van`, xe buýt → không gán. Tượng người cưỡi ngựa img_017 → không gán. |
+| `rider` | **Mới.** Người thật đang ngồi hoặc đứng **trên** `motorcycle`, `bicycle` hoặc `other_vehicle` không có khoang kín; gồm cả người lái và người ngồi sau. | Người đi xe máy giữa ảnh img_003; người đi xe máy nhòe img_014; người đạp xích lô img_023; tài xế tuk-tuk img_004 | Người dắt xe, đứng cạnh xe, chân không còn trên xe → `person` (img_003, người áo đỏ). Người ngồi trong `car`, `truck`, `van`, `bus` → không gán. Tượng người cưỡi ngựa img_017 → không gán. |
 | `car` | Ô tô con ≤ 9 chỗ | img_023; ô tô trên giá img_002 | Pickup → `truck`. |
 | `truck` | Xe có thùng hàng tách khỏi cabin: xe tải, pickup, đầu kéo (kèm rơ-moóc = 1 box). | img_001 (pickup chở ống), img_002, img_012 | Tượng pickup img_027 → không gán. |
-| `van` | Xe thùng kín cỡ nhỏ, thân liền; minibus ≤ 16 chỗ. | | SUV → `car`. |
+| `van` | Xe thùng kín cỡ nhỏ, thân liền; minibus ≤ 16 chỗ. | | SUV → `car`. Xe khách > 16 chỗ → `bus`. |
+| `bus` | **Mới.** Xe chở khách > 16 chỗ: xe buýt thành phố, xe khách, xe buýt 2 tầng, xe khách cỡ trung (kiểu County). Không đếm được ghế thì nhận theo dáng: thân hộp dài, cao hơn hẳn ô tô con, có cửa khách ở hông hoặc bảng số tuyến / LED. | Xe khách cỡ trung giữa ảnh img_009; xe buýt có bảng LED bên phải img_031; 2 xe buýt xanh ở nền img_037; xe buýt vàng đỏ phía sau img_040 | Minibus ≤ 16 chỗ (kiểu Hiace, Transit) → `van`. Xe tải thùng kín → `truck`. |
 | `motorcycle` | Xe máy, mô tô, xe máy điện: người cưỡi trên yên, không mui, không khoang khách; tính cả xe có sidecar. | img_029 (xe điện), img_022 (sidecar) | Tuk-tuk → `other_vehicle`. |
 | `bicycle` | Xe đạp 2 bánh có bàn đạp, khung hở, không vỏ. | img_029 (bên phải), img_003 | Xích lô → `other_vehicle`. |
-| `other_vehicle` | Xe thật không thuộc các lớp xe trên: tuk-tuk, xe lam, xích lô, ba gác, xe buýt. | img_004, img_023, img_035 | Xe mô hình, đồ chơi → không gán. |
+| `other_vehicle` | Xe thật không thuộc các lớp xe trên: tuk-tuk, xe lam, xích lô, ba gác. | img_004, img_023, img_035 | Xe mô hình, đồ chơi → không gán. |
 
 Vật **không thuộc lớp nào** (động vật, xe đẩy tay, cọc tiêu, biển báo, mô hình, tượng, đồ chơi): **không gán**. v1.0 không
 dùng vùng ignore. Vật thật không gán được (quá nhỏ, nhòe, lẫn trong đám đông) thì cũng không gán, theo R-07, R-09, R-10.
@@ -65,7 +66,7 @@ Cách tính che: `rider` và chiếc xe họ đang ở trên che nhau thì khôn
 2. **R-05 Người và xe hở.** Mỗi người trên xe hở 1 box `rider` + 1 box cho xe (xe máy chở 2 người = 2 `rider` + 1 `motorcycle` = 3 box).
    - Phép thử `person` / `rider`: người đang ngồi trên yên, ghế xe hoặc đứng trên sàn xe → `rider`, kể cả khi xe dừng và chân chống đất. Người đã rời xe (dắt xe, đứng cạnh, ngồi trên xe đỗ để nghỉ mà xe không có người lái) → `person`; phân vân → chọn `rider` và tick `can_review`.
    - Box `rider` gồm mũ, ba lô và phần chân trên xe; không gồm đồ cầm tay, gánh.
-   - Người ngồi trong `car`, `truck`, `van`, xe buýt: không gán.
+   - Người ngồi trong `car`, `truck`, `van`, `bus`: không gán.
 3. **R-06** Hàng đặt, buộc lên xe → bao vào box xe. Hàng người cầm, vác → không bao. Xe được chở trên xe khác vẫn gán box riêng.
 4. **R-07** Vật nhòe, tối: gán nếu nhận ra lớp và thấy biên, tick `can_review`. Không tách được biên → không gán; ghi ảnh, vùng và lý do để nhóm đưa vào `submission/qc/image_issues.csv`.
 5. **R-08** Vật bị cắt mép ảnh: box dừng ở mép, `truncated=yes`.
@@ -93,4 +94,4 @@ Ca chưa chốt: tick `can_review` trên box, hoặc ghi ảnh, vùng, lý do n�
 | Phiên bản | Thay đổi | Lý do (ca nào) |
 |---|---|---|
 | v0 | Bản khởi đầu. | — |
-| v1.0 | Thêm lớp `bicycle`, `other_vehicle`, `rider` (`person` chỉ còn người không ở trên xe, R-05); bỏ `ignore_region` (vật < 20 px, cụm không tách được, vùng nhòe → không gán, R-07, R-09, R-10); mô hình, tượng, đồ chơi, phản chiếu không gán box (R-01, R-11); giữ `can_review`; ngưỡng đo được cho thuộc tính; chốt 4 ca khó. | Bản cá nhân lệch nhau về người trên xe: 343 gộp vào `person`, 042 dùng thuộc tính `role`, 069 tách `Driver`/`Person`. Chọn **lớp** vì mô hình phải tự đoán khi suy luận; gộp cả người ngồi sau vì nhìn ảnh khó biết ai lái (img_003, img_014, img_023, img_004). Xe lạ: img_004, img_023, img_035. Vật không thật: img_038, img_017, img_027, img_033. `ignore_region` vẫn nằm trong `taxonomy.json` do script bắt buộc nhưng không vẽ. |
+| v1.0 | Thêm lớp `bicycle`, `other_vehicle`, `bus`, `rider` (`person` chỉ còn người không ở trên xe, R-05); bỏ `ignore_region` (vật < 20 px, cụm không tách được, vùng nhòe → không gán, R-07, R-09, R-10); mô hình, tượng, đồ chơi, phản chiếu không gán box (R-01, R-11); giữ `can_review`; ngưỡng đo được cho thuộc tính; chốt 4 ca khó. | Bản cá nhân lệch nhau về người trên xe: 343 gộp vào `person`, 042 dùng thuộc tính `role`, 069 tách `Driver`/`Person`. Chọn **lớp** vì mô hình phải tự đoán khi suy luận; gộp cả người ngồi sau vì nhìn ảnh khó biết ai lái (img_003, img_014, img_023, img_004). Xe lạ: img_004, img_023, img_035. Xe buýt chưa có lớp trong v0 (img_009, img_031, img_037, img_040): tách riêng `bus` thay vì gộp vào `other_vehicle` vì là vật cản cỡ lớn, hay gặp, dáng khác hẳn tuk-tuk, xích lô. Vật không thật: img_038, img_017, img_027, img_033. `ignore_region` vẫn nằm trong `taxonomy.json` do script bắt buộc nhưng không vẽ. |

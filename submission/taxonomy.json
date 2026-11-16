@@ -5,9 +5,10 @@
     {"name": "car", "definition": "Ô tô con ≤ 9 chỗ. Pickup → truck."},
     {"name": "truck", "definition": "Xe có thùng hàng tách khỏi cabin: xe tải, pickup, đầu kéo (kèm rơ-moóc = 1 box)."},
     {"name": "van", "definition": "Xe thùng kín cỡ nhỏ, thân liền; minibus ≤ 16 chỗ."},
+    {"name": "bus", "definition": "Xe chở khách > 16 chỗ: xe buýt thành phố, xe khách, xe buýt 2 tầng, xe khách cỡ trung."},
     {"name": "motorcycle", "definition": "Xe máy, mô tô, xe máy điện, kể cả xe có sidecar."},
     {"name": "bicycle", "definition": "Xe đạp 2 bánh có bàn đạp, khung hở, không vỏ."},
-    {"name": "other_vehicle", "definition": "Xe thật không thuộc các lớp xe trên: tuk-tuk, xe lam, xích lô, ba gác, xe buýt."},
+    {"name": "other_vehicle", "definition": "Xe thật không thuộc các lớp xe trên: tuk-tuk, xe lam, xích lô, ba gác."},
     {"name": "person", "definition": "Người thật không ở trên xe: đi bộ, đứng, ngồi ghế/vỉa hè, gánh hàng, dắt xe."},
     {"name": "rider", "definition": "Người thật đang ngồi hoặc đứng trên motorcycle, bicycle hoặc other_vehicle không có khoang kín (người lái và người ngồi sau)."},
     {"name": "ignore_region", "definition": "Giữ vì script bắt buộc; v1.0 KHÔNG dùng, không vẽ box lớp này (vật < 20 px, đám đông, vùng nhòe → không gán)."}
