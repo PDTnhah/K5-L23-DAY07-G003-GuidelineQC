@@ -1,6 +1,6 @@
 # Guideline gán nhãn — v1.0 (Bản cá nhân)
 
-- **Tác giả:** Nguyễn Bình Anh (Mã thành viên: 004 — Nhóm G003)
+- **Tác giả:** Nguyễn Bình Anh (Mã thành viên: 104 — Nhóm G003)
 - **Phiên bản:** v1.0 (Nâng cấp từ `guideline_v0_starter.md` sau khảo sát 40 ảnh `img_001.jpg` – `img_040.jpg`)
 - **Loại nhãn:** Bounding box (hộp chữ nhật 2D) trên ảnh đường phố
 - **Công cụ & Định dạng:** CVAT, xuất COCO 1.0 (đồng bộ với `submission/taxonomy.json`)
