@@ -1,8 +1,8 @@
-# Guideline gán nhãn — v0.1 — 101 (nhóm G003)
+# Guideline gán nhãn — v0.1 — 343 (nhóm G003)
 
-- Phiên bản: v0.1-101 (sửa từ `guideline_v0_starter.md`)
+- Phiên bản: v0.1 (sửa từ `guideline_v0_starter.md`)
 - Ngày: 2026-11-16
-- Người viết / duyệt: 101 / nhóm duyệt ở Pha 2
+- Người viết / duyệt: 343 / nhóm duyệt ở Pha 2
 - Loại nhãn: bounding box trên ảnh đường phố · CVAT, xuất COCO 1.0
 
 ---
@@ -81,4 +81,4 @@ Ca chưa chốt: tick `can_review`, ghi ảnh, vùng, lý do và đưa ra họp.
 | Phiên bản | Thay đổi | Lý do (ca nào) |
 |---|---|---|
 | v0 | Bản khởi đầu | — |
-| v0.1-101 | Thêm `bicycle`, `other_vehicle`; ngưỡng thuộc tính; R-01…R-11; 7 ca khó | img_004, img_023, img_035 (xe lạ); img_029 (hàng); img_011, img_027, img_038 (vật không thật); img_014 (nhòe) |
+| v0.1 | Thêm `bicycle`, `other_vehicle`; ngưỡng thuộc tính; R-01…R-11; 7 ca khó | img_004, img_023, img_035 (xe lạ); img_029 (hàng); img_011, img_027, img_038 (vật không thật); img_014 (nhòe) |
