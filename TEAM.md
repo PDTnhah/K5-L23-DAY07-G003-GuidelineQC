@@ -1,9 +1,14 @@
 # Thông tin nhóm
 
-- Tên nhóm:
-- Mã thành viên (ba chữ số):
-- Người điều phối:
-- Người review bản cuối:
+- Tên nhóm: G003
+- Mã thành viên (ba chữ số): 
+  - 101: Pham Duy Thanh
+  - 102: Vũ Gia Khang
+  - 103: Trần Hữu Thủy
+  - 104: Nguyễn Bình Anh
+  - 105: Lê Quang Vinh
+- Người điều phối: Vũ Gia Khang
+- Người review bản cuối: Phạm Duy Thanh
 - Commit chốt bài (điền ở kênh nộp sau khi commit):
 
 ## Kết quả tóm tắt (điền cuối bài)
