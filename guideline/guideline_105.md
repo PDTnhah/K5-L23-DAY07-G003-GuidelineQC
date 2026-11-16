@@ -59,14 +59,14 @@ Dưới đây là các tình huống thực tế xuất hiện trong tập dữ 
 
 | Tình huống đặc biệt | Mã ảnh ví dụ | Quyết định xử lý | Lý do / Giải thích quy tắc |
 |---|---|---|---|
-| **Người giả (Tượng, Ma-nơ-canh, Hình vẽ quảng cáo)** | `img_0xx` *(điền mã ảnh)* | **Loại theo quy tắc (Không vẽ box)** | Không phải người thật tham gia giao thông; gán nhãn sẽ làm sai lệch mô hình phát hiện người đi bộ. |
-| **Xe giả tưởng / Mô hình trưng bày / Tượng xe** | `img_0xx` *(điền mã ảnh)* | **Loại theo quy tắc (Không vẽ box)** | Không phải phương tiện giao thông thực tế hoạt động trên đường. |
-| **Hình phản chiếu qua gương / Cửa kính cửa hàng** | `img_0xx` *(điền mã ảnh)* | **Loại theo quy tắc (Không vẽ box)** | Chỉ là ảnh ảo phản xạ, không tồn tại vật thể thực tại vị trí pixel đó. |
-| **Xe chở xe (Xe tải chở ô tô con hoặc chở xe máy)** | `img_0xx` *(điền mã ảnh)* | **Gán nhãn cả hai (Xe chở + Xe được chở)** | Vẽ 1 box `truck` cho xe tải lớn bên dưới, đồng thời vẽ các box `car`/`motorcycle` riêng cho từng xe nằm trên thùng nếu nhìn thấy rõ hình dạng. |
-| **Xe ba gác / Tuk-tuk / Xe lôi** | `img_0xx` *(điền mã ảnh)* | **Gán tạm `motorcycle` hoặc `van` + Tick `can_review`** | Chưa có lớp riêng trong taxonomy v0; cần hỏi reviewer/nhóm ở Pha 2 để thống nhất quy về một lớp chung hay bỏ qua. |
-| **Xe đạp / Người đi xe đạp** | `img_0xx` *(điền mã ảnh)* | **Vẽ box `person` cho người; xe đạp tick `can_review` hoặc bỏ qua** | Taxonomy v0 chỉ định nghĩa `motorcycle`, không có lớp `bicycle`. Tuyệt đối không gán nhầm xe đạp thành `motorcycle`. |
-| **Người ngồi bên trong ô tô (qua kính chắn gió)** | `img_0xx` *(điền mã ảnh)* | **Loại theo quy tắc (Không vẽ box `person`)** | Người ngồi trong cabin được coi là một phần của phương tiện `car`/`truck`/`van` đang di chuyển, tránh chồng lấn box không cần thiết. |
-| **Vật bị che khuất nặng ($\ge 75\%$) chỉ lộ bánh xe/nóc xe** | `img_0xx` *(điền mã ảnh)* | **Không vẽ box nếu không nhận diện được loại xe** | Nếu chỉ thấy 1 phần nhỏ không đủ cơ sở phân biệt `car`, `van` hay `truck` thì bỏ qua để tránh nhiễu nhãn. |
+| **Người giả (Tượng, Ma-nơ-canh, Hình vẽ quảng cáo)** | `img_033`  | **Loại theo quy tắc (Không vẽ box)** | Không phải người thật tham gia giao thông; gán nhãn sẽ làm sai lệch mô hình phát hiện người đi bộ. |
+| **Xe giả tưởng / Mô hình trưng bày / Tượng xe** | `img_002`  | **Loại theo quy tắc (Không vẽ box)** | Không phải phương tiện giao thông thực tế hoạt động trên đường. |
+| **Hình phản chiếu qua gương / Cửa kính cửa hàng** | `img_020`  | **Loại theo quy tắc (Không vẽ box)** | Chỉ là ảnh ảo phản xạ, không tồn tại vật thể thực tại vị trí pixel đó. |
+| **Xe chở xe (Xe tải chở ô tô con hoặc chở xe máy)** | `img_002` *(điền mã ảnh)* | **Gán nhãn cả hai (Xe chở + Xe được chở)** | Vẽ 1 box `truck` cho xe tải lớn bên dưới, đồng thời vẽ các box `car`/`motorcycle` riêng cho từng xe nằm trên thùng nếu nhìn thấy rõ hình dạng. |
+| **Xe ba gác / Tuk-tuk / Xe lôi** | `img_004`  | **Gán tạm `motorcycle` hoặc `van` + Tick `can_review`** | Chưa có lớp riêng trong taxonomy v0; cần hỏi reviewer/nhóm ở Pha 2 để thống nhất quy về một lớp chung hay bỏ qua. |
+| **Xe đạp / Người đi xe đạp** | `img_003` | **Vẽ box `person` cho người; xe đạp tick `can_review` hoặc bỏ qua** | Taxonomy v0 chỉ định nghĩa `motorcycle`, không có lớp `bicycle`. Tuyệt đối không gán nhầm xe đạp thành `motorcycle`. |
+| **Người ngồi bên trong ô tô (qua kính chắn gió)** | `img_010` | **Loại theo quy tắc (Không vẽ box `person`)** | Người ngồi trong cabin được coi là một phần của phương tiện `car`/`truck`/`van` đang di chuyển, tránh chồng lấn box không cần thiết. |
+| **Vật bị che khuất nặng ($\ge 75\%$) chỉ lộ bánh xe/nóc xe** | `img_011` | **Không vẽ box nếu không nhận diện được loại xe** | Nếu chỉ thấy 1 phần nhỏ không đủ cơ sở phân biệt `car`, `van` hay `truck` thì bỏ qua để tránh nhiễu nhãn. |
 
 ---
 
