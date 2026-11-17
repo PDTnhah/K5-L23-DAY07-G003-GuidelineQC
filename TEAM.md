@@ -9,7 +9,7 @@
   - 059: Lê Quang Vinh
 - Người điều phối: Vũ Gia Khang
 - Người review bản cuối: Phạm Duy Thanh
-- Commit chốt bài (điền ở kênh nộp sau khi commit): ac54e7b9fd34129f558c51ad3db1db08936f204b
+- Commit chốt bài (điền ở kênh nộp sau khi commit): 1aea1bb02c364607c1541765467a40ad6fc7e0a3
 
 ## Kết quả tóm tắt (điền cuối bài)
 
